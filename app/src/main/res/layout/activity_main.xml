@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <androidx.media3.ui.PlayerView
+        android:id="@+id/player_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:use_controller="false"
+        app:surface_type="texture_view" />
+
+    <LinearLayout
+        android:id="@+id/tivimate_info_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#F20F0F0F"
+        android:orientation="vertical"
+        android:paddingLeft="30dp"
+        android:paddingTop="18dp"
+        android:paddingRight="30dp"
+        android:paddingBottom="18dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/txt_info_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="105"
+                android:textColor="#0D6EFD"
+                android:textSize="38sp"
+                android:textStyle="bold"
+                android:layout_marginRight="15dp"/>
+
+            <TextView
+                android:id="@+id/txt_info_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="HBO HD PREMIUM"
+                android:textColor="#FFFFFF"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:singleLine="true"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/badge_resolution"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="---"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:background="#33FFFFFF"
+                android:paddingLeft="8dp"
+                android:paddingTop="3dp"
+                android:paddingRight="8dp"
+                android:paddingBottom="3dp"
+                android:layout_marginRight="10dp"/>
+
+            <TextView
+                android:id="@+id/badge_audio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="---"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:background="#33FFFFFF"
+                android:paddingLeft="8dp"
+                android:paddingTop="3dp"
+                android:paddingRight="8dp"
+                android:paddingBottom="3dp"
+                android:layout_marginRight="10dp"/>
+
+            <TextView
+                android:id="@+id/badge_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LIVE STREAM"
+                android:textColor="#198754"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:layout_marginRight="10dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/channels_list_view"
+        android:layout_width="320dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#E61A1A1A"
+        android:divider="#33FFFFFF"
+        android:dividerHeight="1dp"
+        android:padding="10dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:drawSelectorOnTop="false"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/settings_layout"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#FA1A1A1A"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MENÚ PRINCIPAL"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"/>
+
+        <Button
+            android:id="@+id/btn_menu_m3u"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Editar / Añadir Lista M3U"
+            android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:id="@+id/btn_menu_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cambiar Color de Tema"
+            android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:id="@+id/btn_menu_salir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Salir de la Aplicación"
+            android:backgroundTint="#DC3545"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/input_layout"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#333333"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/url_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingresa la URL M3U aquí"
+            android:textColorHint="#AAAAAA"
+            android:textColor="#FFFFFF"
+            android:inputType="textUri" />
+
+        <Button
+            android:id="@+id/play_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Guardar y Reproducir" />
+    </LinearLayout>
+
+</FrameLayout>
